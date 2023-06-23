@@ -27,6 +27,14 @@ namespace GateCaller.Helpers
             await SecureStorage.Default.SetAsync("Gates", JsonSerializer.Serialize(Gates));
         }
 
+        public static async Task MoveGates(int oldIndex, int newIndex)
+        {
+            var gate = Gates[oldIndex];
+            Gates.RemoveAt(oldIndex);
+            var temp = new List<Gate>() { gate };
+            Gates.InsertRange(newIndex, temp);
+            await UpdateGates();
+        }
         public static void ResetGates()
         {
             Gates.Clear();
