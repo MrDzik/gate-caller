@@ -71,10 +71,5 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Classes\" />
-	  <Folder Include="Helpers\" />
-	</ItemGroup>
  
 </Project>
