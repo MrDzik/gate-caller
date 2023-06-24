@@ -14,7 +14,7 @@
         <Label x:Name="Header" FontSize="28" HorizontalTextAlignment="Center" Margin="0,0,0,50" />
         
         <Label FontSize="20" Text="Nazwa" />
-        <Entry FontSize="18" Placeholder="Nazwa bramy" x:Name="GateName" Margin="0,0,0,25" />
+        <Entry FontSize="18" Placeholder="Nazwa bramy" MaxLength="20" x:Name="GateName" Margin="0,0,0,25" />
 
         <Label FontSize="20" Text="Nr. telefonu" />
         <HorizontalStackLayout Margin="0,0,0,25">
