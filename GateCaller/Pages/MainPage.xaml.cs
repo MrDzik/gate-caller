@@ -35,15 +35,7 @@ public partial class MainPage : ContentPage
         Dispatcher.Dispatch(() =>
         {
             StackLayout.Children.Clear();
-            if (count == 0)
-            {
-                MainStackLayout.Children.Add(new Label()
-                {
-                    Text = "Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?",
-                    HorizontalTextAlignment = TextAlignment.Center
-                });
-            }
-            else
+            if (count != 0)
             {
                 for (var i = 0; i < count; i++)
                 {
