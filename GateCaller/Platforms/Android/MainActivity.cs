@@ -35,4 +35,19 @@ public class MainActivity : MauiAppCompatActivity
             return true;
         }
     }
+
+    public static bool CheckAndRequestForLocPermission()
+    {
+        if (ContextCompat.CheckSelfPermission(CurrentActivity.ApplicationContext,
+                Manifest.Permission.AccessFineLocation) != Permission.Granted)
+        {
+            ActivityCompat.RequestPermissions(CurrentActivity, new string[] { Manifest.Permission.AccessFineLocation }, 1);
+            return ContextCompat.CheckSelfPermission(CurrentActivity.ApplicationContext,
+                Manifest.Permission.AccessFineLocation) != Permission.Granted;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

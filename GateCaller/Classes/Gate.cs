@@ -10,11 +10,13 @@ namespace GateCaller.Classes
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
-
-        public Gate(string name, string phoneNumber)
+        public Location? Location { get; set; }
+        public string Distance { get; set; }
+        public Gate(string name, string phoneNumber, Location location = null)
         {
             Name = name;
             PhoneNumber = phoneNumber;
+            Location = location;
         }
     }
 }

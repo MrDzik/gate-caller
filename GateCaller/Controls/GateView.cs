@@ -10,9 +10,11 @@ namespace GateCaller.Controls
     // but this will change when new features comes in 
     internal class GateView : ContentView
     {
-        public static readonly BindableProperty GateNameProperty = BindableProperty.Create(nameof(GateName), typeof(string), typeof(SettingsGateView), string.Empty);
-        public static readonly BindableProperty GatePosProperty = BindableProperty.Create(nameof(GatePos), typeof(int), typeof(SettingsGateView));
-
+        public static readonly BindableProperty GateNameProperty = BindableProperty.Create(nameof(GateName), typeof(string), typeof(GateView), string.Empty);
+        public static readonly BindableProperty GatePosProperty = BindableProperty.Create(nameof(GatePos), typeof(int), typeof(GateView));
+        public static readonly BindableProperty GateLocationProperty = BindableProperty.Create(nameof(GateLocation), typeof(Location), typeof(GateView), null);
+        public static readonly BindableProperty GateDistanceProperty = BindableProperty.Create(nameof(GateDistance), typeof(string), typeof(GateView), "( Sprawdzam... )");
+        
         public string GateName
         {
             get => (string)GetValue(GateNameProperty);
@@ -22,6 +24,16 @@ namespace GateCaller.Controls
         {
             get => (int)GetValue(GatePosProperty);
             set => SetValue(GatePosProperty, value);
+        }
+        public Location? GateLocation
+        {
+            get => (Location?)GetValue(GateLocationProperty);
+            set => SetValue(GateLocationProperty, value);
+        }
+        public string GateDistance
+        {
+            get => (string)GetValue(GateDistanceProperty);
+            set => SetValue(GateDistanceProperty, value);
         }
     }
 }

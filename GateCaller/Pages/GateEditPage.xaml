@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GateCaller.Pages.GateEditPage"
              Title="Wróć do ustawień"
+             Loaded="GateEditPage_OnLoaded"
              >
     <VerticalStackLayout
         x:Name="StackLayout"
@@ -10,21 +11,40 @@
         Padding="30,30"
         VerticalOptions="Start"
         HorizontalOptions="Center"
+        WidthRequest="350"
     >
-        <Label x:Name="Header" FontSize="28" HorizontalTextAlignment="Center" Margin="0,0,0,50" />
-        
-        <Label FontSize="20" Text="Nazwa" />
-        <Entry FontSize="18" Placeholder="Nazwa bramy" MaxLength="20" x:Name="GateName" Margin="0,0,0,25" />
+        <Label x:Name="Header" FontSize="28" HorizontalTextAlignment="Center" Margin="0,0,0,25" />
 
-        <Label FontSize="20" Text="Nr. telefonu" />
-        <HorizontalStackLayout Margin="0,0,0,25">
-            <Entry Keyboard="Telephone" MaxLength="4" WidthRequest="65" FontSize="18" Placeholder="+XX" Text="+48" x:Name="GatePhonePrefix" />
-            <Entry Keyboard="Numeric" MaxLength="9" FontSize="18" Placeholder="Numer telefonu bramy" x:Name="GatePhone"  />
-        </HorizontalStackLayout>
+        <Border StrokeThickness="1" Margin="0,0,0,10">
+            <VerticalStackLayout Padding="15">
+                <Label Text="Nazwa" HorizontalTextAlignment="Center" />
+                <Entry HorizontalTextAlignment="Center" FontSize="18" Placeholder="Nazwa bramy" MaxLength="20" x:Name="GateName" />
+            </VerticalStackLayout>
+        </Border>
         
+        <Border StrokeThickness="1" Margin="0,0,0,10">
+            <VerticalStackLayout Padding="15">
+                <Label Text="Nr. telefonu" HorizontalTextAlignment="Center" />
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Entry HorizontalTextAlignment="Center" Keyboard="Telephone" MaxLength="4" WidthRequest="60" FontSize="18" Placeholder="+XX" Text="+48" x:Name="GatePhonePrefix" />
+                    <Entry HorizontalTextAlignment="Center" Keyboard="Numeric" MaxLength="9" WidthRequest="120" FontSize="18" Placeholder="Numer" x:Name="GatePhone"  />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Border>
+        
+        <Border StrokeThickness="1" Margin="0,0,0,10">
+            <VerticalStackLayout Spacing="10" Padding="20">
+                <Label x:Name="GatePosLabel" HorizontalTextAlignment="Center" />
+                <Slider x:Name="GatePos" Minimum="1" ValueChanged="GatePos_OnValueChanged" />
+            </VerticalStackLayout>
+        </Border>
 
-        <Label x:Name="GatePosLabel" HorizontalTextAlignment="Center" Margin="0,0,0,25" />
-        <Slider x:Name="GatePos" Minimum="1" ValueChanged="GatePos_OnValueChanged" Margin="0,0,0,50"  />
+        <Border StrokeThickness="1" Margin="0,0,0,25">
+            <VerticalStackLayout Spacing="10" Padding="15">
+                <Label x:Name="LocationLabel" HorizontalTextAlignment="Center" Text="Sprawdzam..." />
+                <Button x:Name="LocationButton" FontSize="18" Text="Pobierz lokalizację" BackgroundColor="#512BD4" TextColor="White" Clicked="LocationButton_OnClicked"/>
+            </VerticalStackLayout>
+        </Border>
 
         <Button x:Name="SaveButton" FontSize="18" BackgroundColor="#512BD4" TextColor="White" Text="ZAPISZ" Clicked="SaveButton_OnClicked"/>
     </VerticalStackLayout>
