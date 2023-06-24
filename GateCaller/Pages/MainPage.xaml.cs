@@ -37,6 +37,7 @@ public partial class MainPage : ContentPage
             StackLayout.Children.Clear();
             if (count != 0)
             {
+                NoGatesLabel.IsVisible = false;
                 for (var i = 0; i < count; i++)
                 {
                     StackLayout.Children.Add(new GateView()
@@ -47,6 +48,10 @@ public partial class MainPage : ContentPage
                         ControlTemplate = (ControlTemplate)Resources["GateViewControlTemplate"]
                     });
                 }
+            }
+            else
+            {
+                NoGatesLabel.IsVisible = true;
             }
             LoadingLabel.IsVisible = false;
         });

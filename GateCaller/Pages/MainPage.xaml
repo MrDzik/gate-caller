@@ -33,6 +33,7 @@
             >
             <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
             <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="TWOJE BRAMY"  />
+            <Label x:Name="NoGatesLabel" HorizontalTextAlignment="Center" Text="Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?" IsVisible="False" />
             <VerticalStackLayout
                 Spacing="25"
                 VerticalOptions="Center"
