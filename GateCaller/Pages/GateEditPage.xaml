@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GateCaller.Pages.GateEditPage"
+             Title="Wróć do ustawień"
+             >
+    <VerticalStackLayout
+        x:Name="StackLayout"
+        Spacing="0"
+        Padding="30,30"
+        VerticalOptions="Start"
+        HorizontalOptions="Center"
+    >
+        <Label x:Name="Header" FontSize="28" HorizontalTextAlignment="Center" Margin="0,0,0,50" />
+        
+        <Label FontSize="20" Text="Nazwa" />
+        <Entry FontSize="18" Placeholder="Nazwa bramy" x:Name="GateName" Margin="0,0,0,25" />
+
+        <Label FontSize="20" Text="Nr. telefonu" />
+        <HorizontalStackLayout Margin="0,0,0,25">
+            <Entry Keyboard="Telephone" MaxLength="4" WidthRequest="65" FontSize="18" Placeholder="+XX" Text="+48" x:Name="GatePhonePrefix" />
+            <Entry Keyboard="Numeric" MaxLength="9" FontSize="18" Placeholder="Numer telefonu bramy" x:Name="GatePhone"  />
+        </HorizontalStackLayout>
+        
+
+        <Label x:Name="GatePosLabel" HorizontalTextAlignment="Center" Margin="0,0,0,25" />
+        <Slider x:Name="GatePos" Minimum="1" ValueChanged="GatePos_OnValueChanged" Margin="0,0,0,50"  />
+
+        <Button x:Name="SaveButton" FontSize="18" BackgroundColor="#512BD4" TextColor="White" Text="ZAPISZ" Clicked="SaveButton_OnClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
