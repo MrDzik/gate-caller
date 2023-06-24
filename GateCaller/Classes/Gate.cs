@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GateCaller.Classes
 {
-    internal class Gate
+    public class Gate
     {
         public string Name { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public Gate(string name, int phoneNumber)
+        public Gate(string name, string phoneNumber)
         {
             Name = name;
             PhoneNumber = phoneNumber;
