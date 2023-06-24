@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
             StackLayout.Children.Clear();
             if (count == 0)
             {
-                StackLayout.Children.Add(new Label()
+                MainStackLayout.Children.Add(new Label()
                 {
                     Text = "Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?",
                     HorizontalTextAlignment = TextAlignment.Center
