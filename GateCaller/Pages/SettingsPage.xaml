@@ -41,7 +41,7 @@
             Padding="30,30"
             VerticalOptions="Start"
             >
-            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="TWOJE BRAMY"  />
+            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="USTAWIENIA"  />
             <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
             <VerticalStackLayout Spacing="25" x:Name="StackLayout" VerticalOptions="Start" />
         </VerticalStackLayout>

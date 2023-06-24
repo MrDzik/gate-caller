@@ -63,7 +63,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiSplashScreen Include="Resources\Splash\gate_caller_splash.svg" Color="#512BD4" BaseSize="384,384" />
+	  <MauiSplashScreen Include="Resources\Splash\gate_caller_splash.svg" Color="#512BD4" BaseSize="512,512" />
 	</ItemGroup>
 
 	<ItemGroup>

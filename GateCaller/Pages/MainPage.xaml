@@ -25,9 +25,10 @@
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+            Padding="30,30"
+            VerticalOptions="Start">
             <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
+            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="TWOJE BRAMY"  />
             <VerticalStackLayout
                 Spacing="25"
                 VerticalOptions="Center"
