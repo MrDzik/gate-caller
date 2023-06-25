@@ -13,7 +13,7 @@
                 HeightRequest="150"
                 StrokeThickness="1"
                 BackgroundColor="Transparent"
-                StrokeShape="RoundRectangle 40,40,40,40"
+                StrokeShape="RoundRectangle 20,20,20,20"
                 x:Uid="{Binding GatePos}"
             >
                 <VerticalStackLayout Padding="0,10">

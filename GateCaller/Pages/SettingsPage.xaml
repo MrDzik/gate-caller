@@ -15,7 +15,7 @@
                 x:Uid="{Binding GatePos}"
             >
                 <HorizontalStackLayout>
-                    <Frame WidthRequest="190" BackgroundColor="Transparent">
+                    <Frame WidthRequest="190" BorderColor="Transparent" BackgroundColor="Transparent">
                         <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24" Text="{Binding GateName}"/>
                     </Frame>
                     <VerticalStackLayout VerticalOptions="Center" Spacing="25">
