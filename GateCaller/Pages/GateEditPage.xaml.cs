@@ -107,19 +107,7 @@ public partial class GateEditPage : ContentPage
                 {
                     var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
                     var location = await Geolocation.Default.GetLocationAsync(request);
-                    Dispatcher.Dispatch(() =>
-                    {
-                        if (location == null)
-                        {
-                            LocationLabel.Text = "Aktualna odległość: ?? m";
-                        }
-                        else
-                        {
-                            var distance = Location.CalculateDistance(location, Location,
-                                DistanceUnits.Kilometers);
-                            LocationLabel.Text = "Aktualna odległość: " + (int)Math.Round(distance * 1000) + " m"; 
-                        }
-                    });
+                    SetLocationText(location);
                 }
             }
             catch (Exception)
@@ -155,6 +143,7 @@ public partial class GateEditPage : ContentPage
             {
                 DisplayAlert("Lokalizacja", "Lokalizacja poprawnie zczytana.", "OK");
             });
+            SetLocationText(location);
         }
         catch (Exception)
         {
@@ -163,5 +152,22 @@ public partial class GateEditPage : ContentPage
                 DisplayAlert("Lokalizacja", "Wystąpił problem przy pobieraniu lokalizacji, sprawdź uprawnienia i status GPS.", "OK");
             });
         }
+    }
+
+    private void SetLocationText(Location location)
+    {
+        Dispatcher.Dispatch(() =>
+        {
+            if (location == null)
+            {
+                LocationLabel.Text = "Aktualna odległość: ?? m";
+            }
+            else
+            {
+                var distance = Location.CalculateDistance(location, Location,
+                    DistanceUnits.Kilometers);
+                LocationLabel.Text = "Aktualna odległość: " + (int)Math.Round(distance * 1000) + " m";
+            }
+        });
     }
 }

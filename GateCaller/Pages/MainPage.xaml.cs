@@ -1,5 +1,6 @@
 ﻿using GateCaller.Controls;
 using GateCaller.Helpers;
+using System.Threading;
 
 namespace GateCaller;
 
@@ -9,21 +10,26 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
     }
+    private CancellationTokenSource _cancellationTokenSource;
+    private CancellationToken _cancellationToken;
 
-    private void MainPage_Reload(object sender, EventArgs e)
+    private void MainPage_OnAppearing(object sender, EventArgs e)
     {
-        Task.Run(LoadData);
-    }
+        _cancellationTokenSource = new CancellationTokenSource();
+        _cancellationToken = _cancellationTokenSource.Token;
+        Task.Run(LoadData, _cancellationToken).Wait(_cancellationToken);
 
-    private void MainPage_OnLoaded(object sender, EventArgs e)
-    {
 #if ANDROID
         var access = MainActivity.CheckAndRequestForLocPermission();
         if (!access) return;
         Task.Run(UpdateLocation);
 #endif
     }
-
+    private void MainPage_OnDisappearing(object sender, EventArgs e)
+    {
+        _cancellationTokenSource.Cancel();
+        _cancellationTokenSource.Dispose();
+    }
     private async Task LoadData()
     {
         Dispatcher.Dispatch(() =>
@@ -59,7 +65,7 @@ public partial class MainPage : ContentPage
 
     private async Task UpdateLocation()
     {
-        while (true)
+        while (!_cancellationToken.IsCancellationRequested)
         {
             try
             {
