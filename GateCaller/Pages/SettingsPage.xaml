@@ -34,6 +34,13 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Margin" Value="10,0"/>
         </Style>
+
+        <ControlTemplate x:Key="SettingsLangViewTemplate">
+            <VerticalStackLayout Spacing="-10" BindingContext="{Binding Source={RelativeSource TemplatedParent}}">
+                <Button HeightRequest="50" WidthRequest="150" BackgroundColor="Transparent" TextColor="{Binding Color}" Text="{Binding LangName}" Clicked="LangButton_OnClicked" />
+                <Line HeightRequest="1" StrokeThickness="1" WidthRequest="100" BackgroundColor="{Binding Color}"/>
+            </VerticalStackLayout>
+        </ControlTemplate>
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout
@@ -41,8 +48,9 @@
             Padding="30,30"
             VerticalOptions="Start"
             >
-            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="USTAWIENIA"  />
+            <Label Margin="0,0,0,10" FontSize="32" HorizontalTextAlignment="Center" Text="USTAWIENIA"  />
             <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
+            <HorizontalStackLayout Spacing="20" x:Name="LangStackLayout" HorizontalOptions="Center"/>
             <VerticalStackLayout Spacing="25" x:Name="StackLayout" VerticalOptions="Start" />
         </VerticalStackLayout>
     </ScrollView>

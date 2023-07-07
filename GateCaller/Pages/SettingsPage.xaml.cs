@@ -2,6 +2,7 @@
 using GateCaller.Controls;
 using GateCaller.Helpers;
 using GateCaller.Pages;
+using GateCaller.Resources.Strings;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GateCaller;
@@ -24,6 +25,7 @@ public partial class SettingsPage : ContentPage
         {
             LoadingLabel.IsVisible = false;
         });
+        var lang = await LangHelper.GetLang();
         await GateHelper.LoadGates();
         var count = GateHelper.Gates.Count;
         Dispatcher.Dispatch(() =>
@@ -49,6 +51,22 @@ public partial class SettingsPage : ContentPage
                     });
                 }
             }
+
+            lang ??= Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+            LangStackLayout.Children.Add(new SettingsLangView()
+            {
+                LangName = "Polski",
+                LangCode = "pl",
+                Color = lang == "pl" ? Colors.White : Colors.Gray,
+                ControlTemplate = (ControlTemplate)Resources["SettingsLangViewTemplate"]
+            });
+            LangStackLayout.Children.Add(new SettingsLangView()
+            {
+                LangName = "English",
+                LangCode = "en",
+                Color = lang == "en" ? Colors.White : Colors.Gray,
+                ControlTemplate = (ControlTemplate)Resources["SettingsLangViewTemplate"]
+            });
 
             var button = new Button()
             {
@@ -87,5 +105,21 @@ public partial class SettingsPage : ContentPage
         GateHelper.Gates.RemoveAt(gatePos);
         await GateHelper.UpdateGates();
         await Task.Run(LoadData);
+    }
+
+    private void LangButton_OnClicked(object sender, EventArgs e)
+    {
+        var button = (Button)sender;
+        var lang = (SettingsLangView)button.BindingContext;
+        Task.Run(async () =>
+        {
+            await LangHelper.ChangeLang(lang.LangCode);
+            Dispatcher.Dispatch(() =>
+            {
+                LangHelper.ChangeCulture(lang.LangCode);
+                DisplayAlert(AppRes.SettingsLangChangeAlertTitle, AppRes.SettingsLangChangeAlertMessage, "OK");
+                (App.Current as App).MainPage = new AppShell();
+            });
+        });
     }
 }

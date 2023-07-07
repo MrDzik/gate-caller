@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GateCaller.Resources.Strings;
 
 namespace GateCaller.Controls
 {
@@ -13,7 +14,7 @@ namespace GateCaller.Controls
         public static readonly BindableProperty GateNameProperty = BindableProperty.Create(nameof(GateName), typeof(string), typeof(GateView), string.Empty);
         public static readonly BindableProperty GatePosProperty = BindableProperty.Create(nameof(GatePos), typeof(int), typeof(GateView));
         public static readonly BindableProperty GateLocationProperty = BindableProperty.Create(nameof(GateLocation), typeof(Location), typeof(GateView), null);
-        public static readonly BindableProperty GateDistanceProperty = BindableProperty.Create(nameof(GateDistance), typeof(string), typeof(GateView), "( Sprawdzam... )");
+        public static readonly BindableProperty GateDistanceProperty = BindableProperty.Create(nameof(GateDistance), typeof(string), typeof(GateView), $"( {AppRes.GateViewDistanceDefaultString} )");
         
         public string GateName
         {

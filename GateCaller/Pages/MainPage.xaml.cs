@@ -1,6 +1,7 @@
 ﻿using GateCaller.Controls;
 using GateCaller.Helpers;
 using System.Threading;
+using GateCaller.Resources.Strings;
 
 namespace GateCaller;
 
@@ -86,7 +87,7 @@ public partial class MainPage : ContentPage
                             }
                             else
                             {
-                                ((GateView)stackLayoutChild).GateDistance = "( Brak lokalizacji )";
+                                ((GateView)stackLayoutChild).GateDistance = $"( {AppRes.MainPageNoLocation} )";
                             }
                         }
                     }
@@ -105,7 +106,7 @@ public partial class MainPage : ContentPage
                 {
                     foreach (var stackLayoutChild in StackLayout.Children)
                     {
-                        ((GateView)stackLayoutChild).GateDistance = "(Nie można ustalić lokalizacji)";
+                        ((GateView)stackLayoutChild).GateDistance = $"( {AppRes.MainPageLocationError} )";
                     }
                 });
             }

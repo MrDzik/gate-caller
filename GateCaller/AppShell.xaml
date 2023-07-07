@@ -4,14 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:GateCaller"
+    xmlns:strings="clr-namespace:GateCaller.Resources.Strings"
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="Bramy"
+        <Tab Title="{x:Static strings:AppRes.GatesTab}"
              Icon="gate.png">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Title="Ustawienia"
+        <Tab Title="{x:Static strings:AppRes.SettingsTab}"
              Icon="settings.png">
             <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
         </Tab>

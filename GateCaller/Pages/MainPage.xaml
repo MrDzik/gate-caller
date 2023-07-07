@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:GateCaller.Resources.Strings"
              x:Class="GateCaller.MainPage"
              Appearing="MainPage_OnAppearing"
              Disappearing="MainPage_OnDisappearing"
@@ -19,7 +20,7 @@
                 <VerticalStackLayout Padding="0,10">
                     <Label FontAttributes="Bold" FontSize="24" HorizontalTextAlignment="Center" Text="{Binding GateName}"/>
                     <Label Margin="0,0,0,10" FontSize="16" HorizontalTextAlignment="Center" Text="{Binding GateDistance}"/>
-                    <Button WidthRequest="200" FontSize="18" Text="Otwórz" BackgroundColor="#512BD4" TextColor="White" Clicked="OpenButton_OnClicked" />
+                    <Button WidthRequest="200" FontSize="18" Text="{x:Static strings:AppRes.MainPageOpenButton}" BackgroundColor="#512BD4" TextColor="White" Clicked="OpenButton_OnClicked" />
                 </VerticalStackLayout>
             </Border>
         </ControlTemplate>
@@ -31,8 +32,8 @@
             VerticalOptions="Start"
             x:Name="MainStackLayout"
             >
-            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
-            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="TWOJE BRAMY"  />
+            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.MainPageDataLoading}"/>
+            <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.MainPageHeader}"  />
             <Label x:Name="NoGatesLabel" HorizontalTextAlignment="Center" Text="Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?" IsVisible="False" />
             <VerticalStackLayout
                 Spacing="25"

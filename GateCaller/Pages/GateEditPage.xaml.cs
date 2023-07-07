@@ -52,7 +52,6 @@ public partial class GateEditPage : ContentPage
     {
         if (string.IsNullOrEmpty(GateName.Text))
         {
-
             DisplayAlert("Błąd", "Musisz podać nazwę bramy.", "OK");
             return;
         }

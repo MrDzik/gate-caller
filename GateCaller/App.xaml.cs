@@ -1,11 +1,15 @@
-﻿namespace GateCaller;
+﻿using GateCaller.Helpers;
+using Thread = System.Threading.Thread;
+
+namespace GateCaller;
 
 public partial class App : Application
 {
 	public App()
-	{
-		InitializeComponent();
-
-		MainPage = new AppShell();
-	}
+    {
+        var lang = Task.Run(LangHelper.GetLang).Result ?? Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+        LangHelper.ChangeCulture(lang);
+        InitializeComponent();
+        MainPage = new AppShell();
+    }
 }
