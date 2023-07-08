@@ -117,14 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GatesTab" xml:space="preserve">
-    <value>Bramy</value>
+  <data name="Error_NoGateName" xml:space="preserve">
+    <value>Musisz podać nazwę bramy.</value>
+  </data>
+  <data name="Error_NoPhoneNumber" xml:space="preserve">
+    <value>Musisz podać numer telefonu.</value>
+  </data>
+  <data name="GateEditPageCancelButton" xml:space="preserve">
+    <value>Wróć do ustawień</value>
+  </data>
+  <data name="GateEditPageCreateHeader" xml:space="preserve">
+    <value>TWORZENIE BRAMY</value>
+  </data>
+  <data name="GateEditPageCurrentDistance" xml:space="preserve">
+    <value>Aktualna odległość:</value>
+  </data>
+  <data name="GateEditPageEditHeader" xml:space="preserve">
+    <value>EDYCJA BRAMY</value>
+  </data>
+  <data name="GateEditPageGateGetLocationButton" xml:space="preserve">
+    <value>Pobierz lokalizację</value>
+  </data>
+  <data name="GateEditPageGateName" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="GateEditPageGateNamePlaceholder" xml:space="preserve">
+    <value>Nazwa bramy</value>
+  </data>
+  <data name="GateEditPageGatePhone" xml:space="preserve">
+    <value>Nr. telefonu</value>
+  </data>
+  <data name="GateEditPageGatePhonePlaceholder" xml:space="preserve">
+    <value>Numer</value>
+  </data>
+  <data name="GateEditPageGatePosition" xml:space="preserve">
+    <value>Pozycja bramy na liście:</value>
+  </data>
+  <data name="GateEditPageGateSaveButton" xml:space="preserve">
+    <value>ZAPISZ</value>
+  </data>
+  <data name="GateEditPageLocationError" xml:space="preserve">
+    <value>Bład, sprawdź uprawnienia</value>
+  </data>
+  <data name="GateEditPageLocationNoPermissions" xml:space="preserve">
+    <value>Brak uprawnień do lokalizacji</value>
+  </data>
+  <data name="GateEditPageNoLocation" xml:space="preserve">
+    <value>Brak lokalizacji.</value>
   </data>
   <data name="GateViewDistanceDefaultString" xml:space="preserve">
     <value>Sprawdzam...</value>
-  </data>
-  <data name="MainPageDataLoading" xml:space="preserve">
-    <value>Trwa ładowanie danych...</value>
   </data>
   <data name="MainPageHeader" xml:space="preserve">
     <value>TWOJE BRAMY</value>
@@ -132,14 +174,35 @@
   <data name="MainPageLocationError" xml:space="preserve">
     <value>Nie można ustalić lokalizacji</value>
   </data>
-  <data name="MainPageNoGates" xml:space="preserve">
-    <value>Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?</value>
-  </data>
   <data name="MainPageNoLocation" xml:space="preserve">
     <value>Brak lokalizacji</value>
   </data>
   <data name="MainPageOpenButton" xml:space="preserve">
     <value>Otwórz</value>
+  </data>
+  <data name="Message_DataLoading" xml:space="preserve">
+    <value>Trwa ładowanie danych...</value>
+  </data>
+  <data name="Message_Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="Message_GateSaved" xml:space="preserve">
+    <value>Poprawnie zapisano bramę.</value>
+  </data>
+  <data name="Message_Location" xml:space="preserve">
+    <value>Lokalizacja</value>
+  </data>
+  <data name="Message_LocationFailure" xml:space="preserve">
+    <value>Wystąpił problem przy pobieraniu lokalizacji, sprawdź uprawnienia i status GPS.</value>
+  </data>
+  <data name="Message_LocationSuccess" xml:space="preserve">
+    <value>Lokalizacja poprawnie zczytana.</value>
+  </data>
+  <data name="Message_NoGates" xml:space="preserve">
+    <value>Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?</value>
+  </data>
+  <data name="Message_Saved" xml:space="preserve">
+    <value>Zapisano</value>
   </data>
   <data name="SettingsLangChangeAlertMessage" xml:space="preserve">
     <value>Niektóre napisy zostaną zmienione dopiero po ponownym uruchomieniu aplikacji.</value>
@@ -147,7 +210,22 @@
   <data name="SettingsLangChangeAlertTitle" xml:space="preserve">
     <value>Uwaga!</value>
   </data>
-  <data name="SettingsTab" xml:space="preserve">
+  <data name="SettingsPageAddGateButton" xml:space="preserve">
+    <value>Dodaj bramę</value>
+  </data>
+  <data name="SettingsPageDeleteButton" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="SettingsPageEditButton" xml:space="preserve">
+    <value>Edutuj</value>
+  </data>
+  <data name="SettingsPageHeader" xml:space="preserve">
+    <value>USTAWIENIA</value>
+  </data>
+  <data name="Tab_Gates" xml:space="preserve">
+    <value>Bramy</value>
+  </data>
+  <data name="Tab_Settings" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
 </root>

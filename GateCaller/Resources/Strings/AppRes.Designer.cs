@@ -61,11 +61,146 @@ namespace GateCaller.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gates.
+        ///   Looks up a localized string similar to You need to provide gate name..
         /// </summary>
-        internal static string GatesTab {
+        internal static string Error_NoGateName {
             get {
-                return ResourceManager.GetString("GatesTab", resourceCulture);
+                return ResourceManager.GetString("Error_NoGateName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to provide phone number..
+        /// </summary>
+        internal static string Error_NoPhoneNumber {
+            get {
+                return ResourceManager.GetString("Error_NoPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to settings.
+        /// </summary>
+        internal static string GateEditPageCancelButton {
+            get {
+                return ResourceManager.GetString("GateEditPageCancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATING GATE.
+        /// </summary>
+        internal static string GateEditPageCreateHeader {
+            get {
+                return ResourceManager.GetString("GateEditPageCreateHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current distance:.
+        /// </summary>
+        internal static string GateEditPageCurrentDistance {
+            get {
+                return ResourceManager.GetString("GateEditPageCurrentDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EDITING GATE.
+        /// </summary>
+        internal static string GateEditPageEditHeader {
+            get {
+                return ResourceManager.GetString("GateEditPageEditHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get location.
+        /// </summary>
+        internal static string GateEditPageGateGetLocationButton {
+            get {
+                return ResourceManager.GetString("GateEditPageGateGetLocationButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string GateEditPageGateName {
+            get {
+                return ResourceManager.GetString("GateEditPageGateName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gate name.
+        /// </summary>
+        internal static string GateEditPageGateNamePlaceholder {
+            get {
+                return ResourceManager.GetString("GateEditPageGateNamePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        internal static string GateEditPageGatePhone {
+            get {
+                return ResourceManager.GetString("GateEditPageGatePhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        internal static string GateEditPageGatePhonePlaceholder {
+            get {
+                return ResourceManager.GetString("GateEditPageGatePhonePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gate position on the list:.
+        /// </summary>
+        internal static string GateEditPageGatePosition {
+            get {
+                return ResourceManager.GetString("GateEditPageGatePosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SAVE.
+        /// </summary>
+        internal static string GateEditPageGateSaveButton {
+            get {
+                return ResourceManager.GetString("GateEditPageGateSaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, check permissions.
+        /// </summary>
+        internal static string GateEditPageLocationError {
+            get {
+                return ResourceManager.GetString("GateEditPageLocationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing location permissions.
+        /// </summary>
+        internal static string GateEditPageLocationNoPermissions {
+            get {
+                return ResourceManager.GetString("GateEditPageLocationNoPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No location set..
+        /// </summary>
+        internal static string GateEditPageNoLocation {
+            get {
+                return ResourceManager.GetString("GateEditPageNoLocation", resourceCulture);
             }
         }
         
@@ -75,15 +210,6 @@ namespace GateCaller.Resources.Strings {
         internal static string GateViewDistanceDefaultString {
             get {
                 return ResourceManager.GetString("GateViewDistanceDefaultString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Loading data....
-        /// </summary>
-        internal static string MainPageDataLoading {
-            get {
-                return ResourceManager.GetString("MainPageDataLoading", resourceCulture);
             }
         }
         
@@ -106,15 +232,6 @@ namespace GateCaller.Resources.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You don&apos;t have any gates yet, maybe add one?.
-        /// </summary>
-        internal static string MainPageNoGates {
-            get {
-                return ResourceManager.GetString("MainPageNoGates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to No location set.
         /// </summary>
         internal static string MainPageNoLocation {
@@ -129,6 +246,78 @@ namespace GateCaller.Resources.Strings {
         internal static string MainPageOpenButton {
             get {
                 return ResourceManager.GetString("MainPageOpenButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading data....
+        /// </summary>
+        internal static string Message_DataLoading {
+            get {
+                return ResourceManager.GetString("Message_DataLoading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Message_Error {
+            get {
+                return ResourceManager.GetString("Message_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gate successfully saved..
+        /// </summary>
+        internal static string Message_GateSaved {
+            get {
+                return ResourceManager.GetString("Message_GateSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string Message_Location {
+            get {
+                return ResourceManager.GetString("Message_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was a problem getting location, please check permissions and GPS status..
+        /// </summary>
+        internal static string Message_LocationFailure {
+            get {
+                return ResourceManager.GetString("Message_LocationFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location read correctly..
+        /// </summary>
+        internal static string Message_LocationSuccess {
+            get {
+                return ResourceManager.GetString("Message_LocationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have any gates yet, maybe add one?.
+        /// </summary>
+        internal static string Message_NoGates {
+            get {
+                return ResourceManager.GetString("Message_NoGates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved.
+        /// </summary>
+        internal static string Message_Saved {
+            get {
+                return ResourceManager.GetString("Message_Saved", resourceCulture);
             }
         }
         
@@ -151,11 +340,56 @@ namespace GateCaller.Resources.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add gate.
+        /// </summary>
+        internal static string SettingsPageAddGateButton {
+            get {
+                return ResourceManager.GetString("SettingsPageAddGateButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string SettingsPageDeleteButton {
+            get {
+                return ResourceManager.GetString("SettingsPageDeleteButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string SettingsPageEditButton {
+            get {
+                return ResourceManager.GetString("SettingsPageEditButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SETTINGS.
+        /// </summary>
+        internal static string SettingsPageHeader {
+            get {
+                return ResourceManager.GetString("SettingsPageHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gates.
+        /// </summary>
+        internal static string Tab_Gates {
+            get {
+                return ResourceManager.GetString("Tab_Gates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string SettingsTab {
+        internal static string Tab_Settings {
             get {
-                return ResourceManager.GetString("SettingsTab", resourceCulture);
+                return ResourceManager.GetString("Tab_Settings", resourceCulture);
             }
         }
     }

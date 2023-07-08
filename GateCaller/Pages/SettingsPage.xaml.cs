@@ -35,7 +35,7 @@ public partial class SettingsPage : ContentPage
             {
                 StackLayout.Children.Add(new Label()
                 {
-                    Text = "Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?",
+                    Text = AppRes.Message_NoGates,
                     HorizontalTextAlignment = TextAlignment.Center
                 });
             }

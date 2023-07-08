@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GateCaller.SettingsPage" 
              xmlns:controls="clr-namespace:GateCaller.Controls"
+             xmlns:strings="clr-namespace:GateCaller.Resources.Strings"
              NavigatedTo="SettingsPage_OnNavigatedTo"
 >
     <ContentPage.Resources>
@@ -19,14 +20,14 @@
                         <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24" Text="{Binding GateName}"/>
                     </Frame>
                     <VerticalStackLayout VerticalOptions="Center" Spacing="25">
-                        <Button HeightRequest="50" WidthRequest="100" Text="Edytuj" BackgroundColor="DodgerBlue" TextColor="White" Clicked="EditButton_OnClicked"/>
-                        <Button HeightRequest="50" WidthRequest="100" Text="Usuń" BackgroundColor="OrangeRed" TextColor="White" Clicked="DeleteButton_OnClicked" />
+                        <Button HeightRequest="50" WidthRequest="100" Text="{x:Static strings:AppRes.SettingsPageEditButton}" BackgroundColor="DodgerBlue" TextColor="White" Clicked="EditButton_OnClicked"/>
+                        <Button HeightRequest="50" WidthRequest="100" Text="{x:Static strings:AppRes.SettingsPageDeleteButton}" BackgroundColor="OrangeRed" TextColor="White" Clicked="DeleteButton_OnClicked" />
                     </VerticalStackLayout>
                 </HorizontalStackLayout>
             </Border>
         </ControlTemplate>
         <Style x:Key="AddButtonStyle" TargetType="Button">
-            <Setter Property="Text" Value="Dodaj bramę"/>
+            <Setter Property="Text" Value="{x:Static strings:AppRes.SettingsPageAddGateButton}"/>
             <Setter Property="WidthRequest" Value="300"/>
             <Setter Property="HeightRequest" Value="50"/>
             <Setter Property="BackgroundColor" Value="#512BD4"/>
@@ -48,8 +49,8 @@
             Padding="30,30"
             VerticalOptions="Start"
             >
-            <Label Margin="0,0,0,10" FontSize="32" HorizontalTextAlignment="Center" Text="USTAWIENIA"  />
-            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="Trwa ładowanie danych..."/>
+            <Label Margin="0,0,0,10" FontSize="32" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.SettingsPageHeader}"  />
+            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.Message_DataLoading}"/>
             <HorizontalStackLayout Spacing="20" x:Name="LangStackLayout" HorizontalOptions="Center"/>
             <VerticalStackLayout Spacing="25" x:Name="StackLayout" VerticalOptions="Start" />
         </VerticalStackLayout>

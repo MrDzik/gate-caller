@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:GateCaller.Resources.Strings"
              x:Class="GateCaller.Pages.GateEditPage"
-             Title="Wróć do ustawień"
+             Title="{x:Static strings:AppRes.GateEditPageCancelButton}"
              Loaded="GateEditPage_OnLoaded"
              >
     <VerticalStackLayout
@@ -17,17 +18,17 @@
 
         <Border StrokeThickness="1" Margin="0,0,0,10">
             <VerticalStackLayout Padding="15">
-                <Label Text="Nazwa" HorizontalTextAlignment="Center" />
-                <Entry HorizontalTextAlignment="Center" FontSize="18" Placeholder="Nazwa bramy" MaxLength="20" x:Name="GateName" />
+                <Label Text="{x:Static strings:AppRes.GateEditPageGateName}" HorizontalTextAlignment="Center" />
+                <Entry HorizontalTextAlignment="Center" FontSize="18" Placeholder="{x:Static strings:AppRes.GateEditPageGateNamePlaceholder}" MaxLength="20" x:Name="GateName" />
             </VerticalStackLayout>
         </Border>
         
         <Border StrokeThickness="1" Margin="0,0,0,10">
             <VerticalStackLayout Padding="15">
-                <Label Text="Nr. telefonu" HorizontalTextAlignment="Center" />
+                <Label Text="{x:Static strings:AppRes.GateEditPageGatePhone}" HorizontalTextAlignment="Center" />
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Entry HorizontalTextAlignment="Center" Keyboard="Telephone" MaxLength="4" WidthRequest="60" FontSize="18" Placeholder="+XX" Text="+48" x:Name="GatePhonePrefix" />
-                    <Entry HorizontalTextAlignment="Center" Keyboard="Numeric" MaxLength="9" WidthRequest="120" FontSize="18" Placeholder="Numer" x:Name="GatePhone"  />
+                    <Entry HorizontalTextAlignment="Center" Keyboard="Numeric" MaxLength="9" WidthRequest="120" FontSize="18" Placeholder="{x:Static strings:AppRes.GateEditPageGatePhonePlaceholder}" x:Name="GatePhone"  />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </Border>
@@ -41,11 +42,11 @@
 
         <Border StrokeThickness="1" Margin="0,0,0,25">
             <VerticalStackLayout Spacing="10" Padding="15">
-                <Label x:Name="LocationLabel" HorizontalTextAlignment="Center" Text="Sprawdzam..." />
-                <Button x:Name="LocationButton" FontSize="18" Text="Pobierz lokalizację" BackgroundColor="#512BD4" TextColor="White" Clicked="LocationButton_OnClicked"/>
+                <Label x:Name="LocationLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.GateViewDistanceDefaultString}" />
+                <Button x:Name="LocationButton" FontSize="18" Text="{x:Static strings:AppRes.GateEditPageGateGetLocationButton}" BackgroundColor="#512BD4" TextColor="White" Clicked="LocationButton_OnClicked"/>
             </VerticalStackLayout>
         </Border>
 
-        <Button x:Name="SaveButton" FontSize="18" BackgroundColor="#512BD4" TextColor="White" Text="ZAPISZ" Clicked="SaveButton_OnClicked"/>
+        <Button x:Name="SaveButton" FontSize="18" BackgroundColor="#512BD4" TextColor="White" Text="{x:Static strings:AppRes.GateEditPageGateSaveButton}" Clicked="SaveButton_OnClicked"/>
     </VerticalStackLayout>
 </ContentPage>

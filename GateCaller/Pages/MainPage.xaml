@@ -32,9 +32,9 @@
             VerticalOptions="Start"
             x:Name="MainStackLayout"
             >
-            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.MainPageDataLoading}"/>
+            <Label x:Name="LoadingLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.Message_DataLoading}"/>
             <Label Margin="0,0,0,50" FontSize="32" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.MainPageHeader}"  />
-            <Label x:Name="NoGatesLabel" HorizontalTextAlignment="Center" Text="Nie posiadasz jeszcze żadnych bram, może jakąś dodasz?" IsVisible="False" />
+            <Label x:Name="NoGatesLabel" HorizontalTextAlignment="Center" Text="{x:Static strings:AppRes.Message_NoGates}" IsVisible="False" />
             <VerticalStackLayout
                 Spacing="25"
                 VerticalOptions="Center"

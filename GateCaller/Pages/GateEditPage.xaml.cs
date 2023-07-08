@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using GateCaller.Classes;
 using GateCaller.Helpers;
+using GateCaller.Resources.Strings;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GateCaller.Pages;
@@ -21,16 +22,16 @@ public partial class GateEditPage : ContentPage
             GatePhonePrefix.Text = gate.PhoneNumber.Split(" ")[0];
             GatePhone.Text = gate.PhoneNumber.Split(" ")[1];
             GatePos.Value = Index + 1;
-            Header.Text = "EDYCJA BRAMY";
+            Header.Text = AppRes.GateEditPageEditHeader;
             Location = gate.Location;
         }
         else
         {
             GatePos.Maximum = GateHelper.Gates.Count + 1;
             GatePos.Value = GatePos.Maximum;
-            Header.Text = "TWORZENIE BRAMY";
+            Header.Text = AppRes.GateEditPageCreateHeader;
         }
-        GatePosLabel.Text = $"Pozycja bramy na liście: {GatePos.Value}";
+        GatePosLabel.Text = $"{AppRes.GateEditPageGatePosition} {GatePos.Value}";
     }
     private void GateEditPage_OnLoaded(object sender, EventArgs e)
     {
@@ -45,20 +46,20 @@ public partial class GateEditPage : ContentPage
         var val = e.NewValue;
         var step = (int)Math.Round(val);
         GatePos.Value = step;
-        GatePosLabel.Text = $"Pozycja bramy na liście: {step}";
+        GatePosLabel.Text = $"{AppRes.GateEditPageGatePosition} {step}";
     }
 
     private void SaveButton_OnClicked(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(GateName.Text))
         {
-            DisplayAlert("Błąd", "Musisz podać nazwę bramy.", "OK");
+            DisplayAlert(AppRes.Message_Error, AppRes.Error_NoGateName, "OK");
             return;
         }
 
         if (string.IsNullOrEmpty(GatePhone.Text) || string.IsNullOrEmpty(GatePhonePrefix.Text))
         {
-            DisplayAlert("Błąd", "Musisz podać numer telefonu.", "OK");
+            DisplayAlert(AppRes.Message_Error, AppRes.Error_NoPhoneNumber, "OK");
             return;
         }
         Task.Run(SaveGate);
@@ -84,7 +85,7 @@ public partial class GateEditPage : ContentPage
 
         Dispatcher.Dispatch(() =>
         {
-            DisplayAlert("Zapisano", "Poprawnie zapisano bramę.", "OK");
+            DisplayAlert(AppRes.Message_Saved, AppRes.Message_GateSaved, "OK");
             Navigation.PopAsync();
         });
     }
@@ -99,7 +100,7 @@ public partial class GateEditPage : ContentPage
                 {
                     Dispatcher.Dispatch(() =>
                     {
-                        LocationLabel.Text = "Brak lokalizacji.";
+                        LocationLabel.Text = AppRes.GateEditPageNoLocation;
                     });
                 }
                 else
@@ -113,7 +114,7 @@ public partial class GateEditPage : ContentPage
             {
                 Dispatcher.Dispatch(() =>
                 {
-                    LocationLabel.Text = "Aktualna odległość: Bład, sprawdź uprawnienia";
+                    LocationLabel.Text = $"{AppRes.GateEditPageCurrentDistance} {AppRes.GateEditPageLocationError}";
                 });
             }
             await Task.Delay(5000);
@@ -124,7 +125,7 @@ public partial class GateEditPage : ContentPage
 #if ANDROID
         var access = MainActivity.CheckAndRequestForLocPermission();
         if (!access) {
-            LocationLabel.Text = "Brak uprawnień do lokalizacji";
+            LocationLabel.Text = AppRes.GateEditPageLocationNoPermissions;
             return;
         }
         Task.Run(SetGateLocation);
@@ -140,7 +141,7 @@ public partial class GateEditPage : ContentPage
             Location = location;
             Dispatcher.Dispatch(() =>
             {
-                DisplayAlert("Lokalizacja", "Lokalizacja poprawnie zczytana.", "OK");
+                DisplayAlert(AppRes.Message_Location, AppRes.Message_LocationSuccess, "OK");
             });
             SetLocationText(location);
         }
@@ -148,7 +149,7 @@ public partial class GateEditPage : ContentPage
         {
             Dispatcher.Dispatch(() =>
             {
-                DisplayAlert("Lokalizacja", "Wystąpił problem przy pobieraniu lokalizacji, sprawdź uprawnienia i status GPS.", "OK");
+                DisplayAlert(AppRes.Message_Location, AppRes.Message_LocationFailure, "OK");
             });
         }
     }
@@ -159,13 +160,13 @@ public partial class GateEditPage : ContentPage
         {
             if (location == null)
             {
-                LocationLabel.Text = "Aktualna odległość: ?? m";
+                LocationLabel.Text = $"{AppRes.GateEditPageCurrentDistance} ?? m";
             }
             else
             {
                 var distance = Location.CalculateDistance(location, Location,
                     DistanceUnits.Kilometers);
-                LocationLabel.Text = "Aktualna odległość: " + (int)Math.Round(distance * 1000) + " m";
+                LocationLabel.Text = $"{AppRes.GateEditPageCurrentDistance} {(int)Math.Round(distance * 1000)} m";
             }
         });
     }

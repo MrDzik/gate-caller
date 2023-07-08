@@ -8,11 +8,11 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <Tab Title="{x:Static strings:AppRes.GatesTab}"
+        <Tab Title="{x:Static strings:AppRes.Tab_Gates}"
              Icon="gate.png">
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
         </Tab>
-        <Tab Title="{x:Static strings:AppRes.SettingsTab}"
+        <Tab Title="{x:Static strings:AppRes.Tab_Settings}"
              Icon="settings.png">
             <ShellContent ContentTemplate="{DataTemplate local:SettingsPage}" />
         </Tab>
