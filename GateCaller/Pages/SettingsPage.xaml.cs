@@ -57,14 +57,14 @@ public partial class SettingsPage : ContentPage
             {
                 LangName = "Polski",
                 LangCode = "pl",
-                Color = lang == "pl" ? Colors.White : Colors.Gray,
+                Color = lang == "pl" ? Color.FromArgb("#512BD4") : Colors.Gray,
                 ControlTemplate = (ControlTemplate)Resources["SettingsLangViewTemplate"]
             });
             LangStackLayout.Children.Add(new SettingsLangView()
             {
                 LangName = "English",
                 LangCode = "en",
-                Color = lang == "en" ? Colors.White : Colors.Gray,
+                Color = lang == "en" ? Color.FromArgb("#512BD4") : Colors.Gray,
                 ControlTemplate = (ControlTemplate)Resources["SettingsLangViewTemplate"]
             });
 
